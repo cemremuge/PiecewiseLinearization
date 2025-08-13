@@ -12,8 +12,8 @@ close all
 formatSpec = '%f'; 
 currentDir = cd;
 %% Read MOS and metric score values
-mosdir = '\MetricScores_Datasets\metrics_values_TID2013\mos.txt';
-msdir  = '\MetricScores_Datasets\metrics_values_TID2013\ssim.txt'; % define selected metric .txt file
+mosdir = '.\metric_values_TID2013\mos.txt';
+msdir  = '.\metric_values_TID2013\ssim.txt'; % define selected metric .txt file
 mospath = append(currentDir, mosdir);
 mspath  = append(currentDir, msdir);
 
@@ -88,11 +88,6 @@ for i = 1:Q
     m_i_max = max(M_i(M_i~=0)); % max MOS for a single vertical div. 
     m_i_min = min(M_i(M_i~=0)); % min MOS for a single vertical div.
 
-
-    % WILL BE REMOVED!!!!!
-    stdev = std(S(S(:,i)~=0,i)); % S(:,i) contains zero entries which may 
-    % effect the std computation, to avoid that remove zeros and then
-    % compute the std. 
 
     % Determine the number of horizontal divisions for each vertical window
     % i.e. R_1, R_2, ..., R_Q, See Eq.9
